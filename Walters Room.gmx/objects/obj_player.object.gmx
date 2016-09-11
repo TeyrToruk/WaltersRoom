@@ -199,17 +199,19 @@ if (key_jump) &amp;&amp; (place_meeting(x+1,y,obj_wall) || place_meeting(x-1,y,o
 {
     if(!place_meeting(x,y+1,obj_wall)) //Make sure player isn't on floor
     {
-        if(place_meeting(x+1,y,obj_wall) &amp;&amp; (rightwallcooldown == 0))
+        if(place_meeting(x+1,y,obj_wall) &amp;&amp; (rightwallcooldown == 0)) //if true, we are jumping off a right wall
         {
             hsp = -wallpush;
             vsp = -jumpspeed_walljump; //These are down individually so if the wall jump isn't called due to cooldown there is no jump
             rightwallcooldown = jumpcooldownlength;
+            leftwallcooldown = 0; //Reset wall jumping on other wall (allows more speedy wall jumping)
         }
-        else if (place_meeting(x-1,y,obj_wall) &amp;&amp; (leftwallcooldown == 0))
+        else if (place_meeting(x-1,y,obj_wall) &amp;&amp; (leftwallcooldown == 0)) //if true, we are jumping off a left wall
         {
             hsp = wallpush;
             vsp = -jumpspeed_walljump;
             leftwallcooldown = jumpcooldownlength;
+            rightwallcooldown = 0; //Reset wall jumping on other wall
         }
     }
 }
