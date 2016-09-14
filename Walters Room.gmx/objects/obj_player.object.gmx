@@ -214,11 +214,6 @@ if (key_jump) &amp;&amp; (place_meeting(x+1,y,obj_wall) || place_meeting(x-1,y,o
             rightwallcooldown = 0; //Reset wall jumping on other wall
         }
     }
-    else //If player is on ground
-    {
-        leftwallcooldown = 0; //Reset walljump cooldowns
-        rightwallcooldown = 0; 
-    }
 }
 
 var hsp_final = hsp + hsp_carry;
