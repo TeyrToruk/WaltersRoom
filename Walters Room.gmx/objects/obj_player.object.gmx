@@ -32,6 +32,7 @@ grav = 0.5;
 vsp = 0;
 maxfallspeed = 10;
 wallslidespeed = 3;
+//TODO: Have wall slide speed increase over time
 
 //Horizontal variables
 hsp = 0;
